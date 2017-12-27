@@ -7,4 +7,4 @@ Exploring the possibility of using ctypes and Python to control Pololu Tic stepp
   - solution: ```os.environ['PATH'] = os.environ['PATH'] + 'C:/msys64/mingw64/bin'.replace('/','\\')+';'```
 - In ctypes, reading the documentation (https://docs.python.org/3/library/ctypes.html) makes you think (at least it made me think) that you have to specify a structure completely to be able to pass it into a c-library function.  This is not true.  
   - If you want to be able to access the members of the structure, you have to specify them as ```_fields_```.  
-  - If you just need to pass generic pointers to structures with unknown contents, you can use a ```c_void_p``` in place of the structure.
+  - If you just need to pass generic pointers to structures with unknown contents, you can use a ```c_void_p``` in place of the structure.  Although it's probably better to just create an empty ctypes Structure class.
